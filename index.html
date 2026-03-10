@@ -65,7 +65,7 @@
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 3px #ffffff, 0 0 1px #ffffff, 0 0 20px hsl(0, 0%, 50%); 
+            text-shadow: 0 0 3px #ffffff, 0 0 1px #ffffff, 0 0 20px hsl(0, 0%, 50%);
         }
 
         .glass-card {
@@ -75,13 +75,14 @@
             border-radius: 20px;
             padding: 40px;
             contain: content;
-            contain-intrinsic-size: 500px; /* Ajuda o navegador a reservar o espaço antes de renderizar */
+            contain-intrinsic-size: 500px;
+            /* Ajuda o navegador a reservar o espaço antes de renderizar */
         }
 
         /* NEON EFFECT */
-        .neon-title { 
+        .neon-title {
             color: #fff;
-            text-shadow: 0 0 10px #e63946, 0 0 20px #e63946, 0 0 30px #e63946; 
+            text-shadow: 0 0 10px #e63946, 0 0 20px #e63946, 0 0 30px #e63946;
         }
 
         /* PROJETOS */
@@ -233,9 +234,15 @@
         <section id="about">
             <h2 class="section-title">About me</h2>
             <div class="glass-card">
-                <p>I am <strong>PhreakZip</strong> and i'm 22 years old. I'm a dedicated programmer with over 7 years of
-                    experience on Roblox. I specialize in backend architecture and systems in general. My philosophy
-                    revolves around performance-focused logic and clean, maintainable codebases.</p>
+                <p>
+                    I am <strong>PhreakZip</strong> and I'm 22 years old. I'm a dedicated programmer with over 7 years
+                    of
+                    experience on Roblox. I specialize in backend architecture and general systems, with a strong focus
+                    on
+                    <strong>Object-Oriented Programming (OOP)</strong> to build scalable solutions.
+                    I am also the founder of <strong>Unreal X Games</strong>. My philosophy revolves around
+                    performance-focused logic and clean, maintainable codebases.
+                </p>
                 <span class="badge-label">Stack & Utilities:</span>
                 <div class="badge-container">
                     <div class="badge tool">Janitor</div>
@@ -258,7 +265,8 @@
             <h2 class="section-title neon-title">What I Don't Do</h2>
             <div class="glass-card" style="border-left: 4px solid var(--primary-red);">
                 <p style="margin-bottom: 25px;">To maintain the highest quality of service, I focus exclusively on
-                    <strong>Technical Programming</strong>. I do not accept commissions for:</p>
+                    <strong>Technical Programming</strong>. I do not accept commissions for:
+                </p>
                 <div class="out-of-scope-list">
                     <div class="scope-item"><span>✕</span> Advanced Vehicle Physics</div>
                     <div class="scope-item"><span>✕</span> Full Game Builds</div>
@@ -272,34 +280,99 @@
             <div class="projects-grid">
                 <div class="glass-card project-card">
                     <div class="project-info">
-                        <h3>Advanced Combat System</h3>
-                        <p>Complete system including hitboxes, VFX, and frame-data management.</p>
+                        <h3>One Punch Simulator X 💥</h3>
+                        <p>
+                            This is an indie game (developed by a single developer) in which I created all the systems
+                            myself.
+                            <br>
+                            <br>
+                            <a style="color: #00fff2;">
+                                <strong>Visits: 1.0M+</strong>
+                            </a>
+                            <br>
+                            <br>
+                            Game: <a href="https://www.roblox.com/games/114277600105169/One-Punch-Simulator-X"
+                                target="_blank" style="color: #00a2ff; text-decoration: none;">One Punch Simulator X
+                                💥</a>
+                        </p>
                     </div>
                     <div class="project-media-grid">
-                        <video class="project-media-item" width="640" height="360" preload="auto" muted loop playsinline controls>
-                            <source src="videos/Test.mp4" type="video/mp4">
-                        </video>
-                        <video class="project-media-item" width="640" height="360" preload="auto" muted loop playsinline controls>
-                            <source src="videos/Test.mp4" type="video/mp4">
+                        <img src="assets/OnePunchThumb.png" class="project-media-item" loading="lazy">
+                        <video class="project-media-item" width="640" height="360" preload="auto" muted loop playsinline
+                            controls loading="lazy">
+                            <source src="assets/OnePunch.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
                 <div class="glass-card project-card">
                     <div class="project-info">
-                        <h3>Advanced Combat System</h3>
-                        <p>Complete system including hitboxes, VFX, and frame-data management.</p>
+                        <h3>My Wind Farm 🍃</h3>
+                        <p>
+                            This was a project where I worked on the back-end, developing the main game mechanics and
+                            some animations using Motor6D.
+                            <br>
+                            <br>
+                            <a style="color: #00fff2;">
+                                <strong>Visits: 3.0M+</strong>
+                            </a>
+                            <br>
+                            <br>
+                            Game: <a href="https://www.roblox.com/games/133710174473050/My-Wind-Farm" target="_blank"
+                                style="color: #00a2ff; text-decoration: none;">My Wind Farm 🍃</a>
+                        </p>
                     </div>
                     <div class="project-media-grid">
-                        <video class="project-media-item" width="640" height="360" preload="auto" muted loop playsinline controls>
-                            <source src="videos/Test.mp4" type="video/mp4">
+                        <img src="assets/MyWindFarm.webp" class="project-media-item" loading="lazy">
+                        <video class="project-media-item" width="640" height="360" preload="auto" muted loop playsinline
+                            controls loading="lazy">
+                            <source src="assets/MyWindFarmRec.mp4" type="video/mp4">
                         </video>
+                    </div>
+                </div>
+                <div class="glass-card project-card">
+                    <div class="project-info">
+                        <h3>Examples of Aura (VFX)</h3>
+                        <p>
+                            These are some of the auras I've worked with.
+                        </p>
+                    </div>
+                    <div class="project-media-grid">
+                        <img src="assets/Aura1.png" class="project-media-item" loading="lazy">
+                        <img src="assets/Aura2.png" class="project-media-item" loading="lazy">
+                    </div>
+                </div>
+                <div class="glass-card project-card">
+                    <div class="project-info">
+                        <h3>Meteor with Bézier (VFX)</h3>
+                        <p>
+                            A meteor whose trajectory can be defined by a Delta.
+                        </p>
+                    </div>
+                    <div class="project-media-grid">
+                        <video class="project-media-item" width="640" height="360" preload="auto" muted loop playsinline
+                            controls loading="lazy">
+                            <source src="assets/Meteors.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="glass-card project-card">
+                    <div class="project-info">
+                        <h3>Examples of organization</h3>
+                        <p>
+                            I like to keep my workspace organized so as not to hinder future updates.<br>
+                            In ModuleScripts, I always like to leave a Typing file to provide support for live programming.
+                        </p>
+                    </div>
+                    <div class="project-media-grid">
+                        <img src="assets/Folders.png" class="project-media-item" loading="lazy">
+                        <img src="assets/CodeTyping.png" class="project-media-item" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-     <footer>
+    <footer>
         <div class="contact-card">
             <span style="color: #ffffff; font-weight: 300;">Contact me on Discord: </span>
             <strong style="color: var(--primary-red);">phreakzip</strong>
