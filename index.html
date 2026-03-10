@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhreakZip | Systems Programmer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-red: #e63946;
@@ -24,91 +25,124 @@
         }
 
         body {
-            /* Deep Red Gradient Background */
             background: radial-gradient(circle at top right, var(--dark-red) 0%, var(--bg-dark) 60%);
             background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
-            width: 90%;
-            max-width: 1000px;
+            width: 92%;
+            max-width: 1200px;
             margin: auto;
         }
 
-        /* HEADER */
         header {
             padding: 100px 0 60px;
             text-align: center;
         }
 
         header h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 800;
-            letter-spacing: -2px;
             background: linear-gradient(to right, #fff, var(--primary-red));
-            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
         }
 
         header p {
             color: var(--text-dim);
-            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 5px;
         }
 
-        /* SECTIONS */
         section {
-            padding: 80px 0;
+            padding: 50px 0;
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 0 0 3px #ffffff, 0 0 1px #ffffff, 0 0 20px hsl(0, 0%, 50%); 
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 40px;
-            height: 3px;
-            background: var(--primary-red);
-            border-radius: 2px;
-        }
-
-        /* GLASSMORPHISM CARDS */
         .glass-card {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 35px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 40px;
         }
 
-        .glass-card:hover {
-            border-color: rgba(230, 57, 70, 0.5);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        /* NEON EFFECT */
+        .neon-title { 
+            color: #fff;
+            text-shadow: 0 0 10px #e63946, 0 0 20px #e63946, 0 0 30px #e63946; 
+        }
+
+        /* PROJETOS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-red);
+        }
+
+        .project-info h3 {
+            color: var(--primary-red);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .project-media-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+        }
+
+        .project-media-item {
+            width: 49%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* BADGES */
+        .badge-label {
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 20px;
+        }
+
         .badge-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 5px;
         }
 
         .badge {
@@ -118,7 +152,7 @@
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: #ffffff;
+            color: #fff;
         }
 
         .badge.tool {
@@ -127,33 +161,7 @@
             color: var(--text-dim);
         }
 
-        /* PROJECTS GRID */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-media {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            background: #000;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .project-card h3 { margin-bottom: 12px; color: var(--primary-red); font-size: 1.4rem; }
-        .project-card p { font-size: 0.95rem; color: var(--text-dim); }
-
-        /* OUT OF SCOPE SECTION */
+        /* OUT OF SCOPE */
         .out-of-scope-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -173,75 +181,86 @@
             font-weight: bold;
         }
 
+        /* FOOTER & CONTACT */
         footer {
             text-align: center;
-            padding: 80px 0;
-            opacity: 0.4;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
         }
 
-        @media (max-width: 768px) {
-            header { padding: 80px 0 40px; }
-            .section-title { font-size: 1.5rem; }
-            .glass-card { padding: 25px; }
+        /* Estilo do Card de Contato */
+        .contact-card {
+            display: inline-block;
+            padding: 20px 35px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--primary-red);
+            /* Contorno vermelho já visível */
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            /* Suaviza a subida e a mudança de borda */
+            cursor: default;
+        }
+
+        /* Efeito ao passar o mouse */
+        .contact-card:hover {
+            transform: translateY(-5px);
+            /* Sobe 5px */
+            border-width: 2px;
+            /* Aumenta a espessura da borda */
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+            /* Adiciona um brilho suave */
+            background: rgba(230, 57, 70, 0.05);
+            /* Fundo avermelhado bem sutil */
+        }
+
+        .copyright {
+            opacity: 0.5;
+            font-size: 0.8rem;
+            padding: 0 0 30px;
         }
     </style>
 </head>
-<body>
 
+<body>
     <header class="container">
         <h1>PhreakZip</h1>
         <p>Lua / Luau Programmer</p>
     </header>
 
     <main class="container">
-        
         <section id="about">
-            <h2 class="section-title">Professional Profile</h2>
+            <h2 class="section-title">About me</h2>
             <div class="glass-card">
-                <p>
-                    I am <strong>PhreakZip</strong> and i'm 22 years old. I'm a dedicated programmer with over 7 years of experience on Roblox.
-                    I specialize in backend architecture and systems in general.
-                    My philosophy revolves around performance-focused logic and clean, maintainable codebases.
-                </p>
-
-                <div class="badge-container" style="margin-top: 20px;">
-                    <span style="color: var(--text-dim); font-size: 0.75rem; width: 100%; font-weight: 800; letter-spacing: 1px;">STACK & UTILITIES:</span>
+                <p>I am <strong>PhreakZip</strong> and i'm 22 years old. I'm a dedicated programmer with over 7 years of
+                    experience on Roblox. I specialize in backend architecture and systems in general. My philosophy
+                    revolves around performance-focused logic and clean, maintainable codebases.</p>
+                <span class="badge-label">Stack & Utilities:</span>
+                <div class="badge-container">
                     <div class="badge tool">Janitor</div>
                     <div class="badge tool">Promise</div>
                     <div class="badge tool">Others</div>
                 </div>
-
+                <span class="badge-label">Things I Enjoy Working On:</span>
                 <div class="badge-container">
-                    <span style="color: var(--text-dim); font-size: 0.75rem; width: 100%; font-weight: 800; letter-spacing: 1px;">THINGS I ENJOY WORKING ON:</span>
                     <div class="badge">Backend Architecture</div>
                     <div class="badge">Performance Optimization</div>
                     <div class="badge">VFX Scripting</div>
                     <div class="badge">CFrame Manipulations</div>
                     <div class="badge">Build / Grid Systems</div>
+                    <div class="badge">Others</div>
                 </div>
             </div>
         </section>
 
         <section id="scope">
-            <h2
-            class="section-title"
-            style="
-            color: #ff7878;
-            "
-            >What I Don't Do</h2>
-
+            <h2 class="section-title neon-title">What I Don't Do</h2>
             <div class="glass-card" style="border-left: 4px solid var(--primary-red);">
-                <p style="margin-bottom: 25px;">To maintain the highest quality of service, I focus exclusively on <strong>Technical Programming</strong>. I do not accept commissions for:</p>
+                <p style="margin-bottom: 25px;">To maintain the highest quality of service, I focus exclusively on
+                    <strong>Technical Programming</strong>. I do not accept commissions for:</p>
                 <div class="out-of-scope-list">
-                    <div class="scope-item"><span>✕</span> Environmental Building</div>
-                    <div class="scope-item"><span>✕</span> 3D Modeling / Meshing</div>
-                    <div class="scope-item"><span>✕</span> Graphic Design / GFX</div>
-                    <div class="scope-item"><span>✕</span> Map Design & Layouts</div>
-                    <div class="scope-item"><span>✕</span> Game Localization</div>
-                    <div class="scope-item"><span>✕</span> Community Management</div>
+                    <div class="scope-item"><span>✕</span> Advanced Vehicle Physics</div>
+                    <div class="scope-item"><span>✕</span> Full Game Builds</div>
+                    <div class="scope-item"><span>✕</span> Exploit Scripting</div>
                 </div>
             </div>
         </section>
@@ -249,38 +268,42 @@
         <section id="projects">
             <h2 class="section-title">Featured Work</h2>
             <div class="projects-grid">
-                
                 <div class="glass-card project-card">
-                    <video class="project-media" autoplay muted loop playsinline controls>
-                        <source src="videos/Test.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <h3>Tower Defense System</h3>
-                    <p>A scalable framework featuring dynamic wave management, optimized pathfinding for hundreds of entities, and a modular tower upgrade system.</p>
+                    <div class="project-info">
+                        <h3>Advanced Combat System</h3>
+                        <p>Complete system including hitboxes, VFX, and frame-data management.</p>
+                    </div>
+                    <div class="project-media-grid">
+                        <video class="project-media-item" preload="auto" muted loop playsinline controls>
+                            <source src="videos/Test.mp4" type="video/mp4">
+                        </video>
+                        <video class="project-media-item" preload="auto" muted loop playsinline controls>
+                            <source src="videos/Test.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
-
                 <div class="glass-card project-card">
-                    <img class="project-media" src="images/plugin.png" alt="Plugin Interface">
-                    <h3>CFrame Editor Plugin</h3>
-                    <p>Advanced Roblox Studio utility designed for surgical CFrame manipulation through intuitive visual handles and coordinate snapping.</p>
+                    <div class="project-info">
+                        <h3>Advanced Combat System</h3>
+                        <p>Complete system including hitboxes, VFX, and frame-data management.</p>
+                    </div>
+                    <div class="project-media-grid">
+                        <video class="project-media-item" preload="auto" muted loop playsinline controls>
+                            <source src="videos/Test.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
-
-                <div class="glass-card project-card">
-                    <video class="project-media" autoplay muted loop>
-                        <source src="videos/promise.mp4" type="video/mp4">
-                    </video>
-                    <h3>Promise Library Implementation</h3>
-                    <p>Robust Luau Promise implementation supporting retries, delays, cancellation tokens, and full asynchronous chaining.</p>
-                </div>
-
             </div>
         </section>
-
     </main>
 
-    <footer>
-        <p>© 2026 PHREAKZIP • ALL RIGHTS RESERVED.</p>
+     <footer>
+        <div class="contact-card">
+            <span style="color: #ffffff; font-weight: 300;">Contact me on Discord: </span>
+            <strong style="color: var(--primary-red);">phreakzip</strong>
+        </div>
+        <p class="copyright">© 2026 PHREAKZIP • ALL RIGHTS RESERVED.</p>
     </footer>
-
 </body>
+
 </html>
